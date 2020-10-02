@@ -29,7 +29,6 @@ private:
 	No<T>* fim_lista;
 	No<T>* aux;
 	T* temp;
-	T temporaria;
 	
 protected:
 	int tam;
@@ -41,7 +40,6 @@ template <class T>
 inline Lista<T>::Lista()
 {
 	inicio_lista = fim_lista = aux = nullptr;
-	temp = new int;
 	tam = 0;
 }
 
@@ -80,18 +78,20 @@ inline void Lista<T>::insereInicioLista(T* elemento)
 		inicio_lista = fim_lista = n; //Insere o nó na lista
 	}
 	else {//Caso não esteja vazia
-		aux->setAnterior(n); //Insere o nó na lista
+		aux->setAnterior(n); //
 		n->setProximo(aux);
 		inicio_lista = n;
+
+		inicio_lista->setAnterior(fim_lista);
+		fim_lista->setProximo(inicio_lista);
 	}
-	n->setAnterior(nullptr);
 	tam++;
 }
 
 template <class T>
 inline T* Lista<T>::removeUltimoNo()
 {
-	T* temp = fim_lista->getDado();
+	temp = fim_lista->getDado();
 	tam--;
 	percorrerLista(); //Encontrar o penúltimo nó da lista
 	delete fim_lista; //Desaloca a última posição
@@ -100,8 +100,9 @@ inline T* Lista<T>::removeUltimoNo()
 		inicio_lista = fim_lista = aux = nullptr;
 	}
 	else {
-		aux->setProximo(nullptr); //Configura valor nulo para o ponteiro proximoNo do penúltimo nó
+		aux->setProximo(inicio_lista); //Configura valor nulo para o ponteiro proximoNo do penúltimo nó
 		fim_lista = aux; //Corrige qual o último nó da lista
+		inicio_lista->setAnterior(fim_lista);
 	}
 	return temp;
 }
@@ -109,7 +110,7 @@ inline T* Lista<T>::removeUltimoNo()
 template <class T>
 inline T* Lista<T>::removePrimeiroNo()
 {
-	T* temp = inicio_lista->getDado();
+	temp = inicio_lista->getDado();
 	tam--;
 	aux = inicio_lista;//Seta o Aux na posição Inicial
 	aux = aux->getProximo();//Se desloca para a segunda posição
@@ -120,7 +121,14 @@ inline T* Lista<T>::removePrimeiroNo()
 	else {
 		delete inicio_lista;//Desaloca a primeira posição
 		inicio_lista = aux; //Corrige qual o primeiro nó da lista
-		aux->setAnterior(nullptr);
+		if (tam == 1) {
+			inicio_lista->setAnterior(nullptr);
+			fim_lista->setProximo(nullptr);
+		}
+		else {
+			inicio_lista->setAnterior(fim_lista);
+			fim_lista->setProximo(inicio_lista);
+		}		
 	}
 	return temp;
 }
@@ -139,8 +147,8 @@ inline void Lista<T>::esvaziaLista()
 template <class T>
 inline T* Lista<T>::obterUltimoElemento()
 {
-	temporaria = fim_lista->getDado();
-	return &temporaria;
+	temp = fim_lista->getDado();
+	return temp;
 }
 
 template <class T>
