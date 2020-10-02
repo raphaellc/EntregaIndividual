@@ -138,7 +138,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Container.cpp" />
+    <ClCompile Include="Jogo.cpp" />
+    <ClCompile Include="ListaDE.cpp" />
+    <ClCompile Include="ListaGO.cpp" />
+    <ClCompile Include="ListaSE.cpp" />
+    <ClCompile Include="NoDE.cpp" />
+    <ClCompile Include="NoSE.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="VetorDinamico.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Container.h" />
+    <ClInclude Include="Jogo.h" />
+    <ClInclude Include="ListaDE.h" />
+    <ClInclude Include="ListaGO.h" />
+    <ClInclude Include="ListaSE.h" />
+    <ClInclude Include="NoDE.h" />
+    <ClInclude Include="NoSE.h" />
+    <ClInclude Include="VetorDinamico.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
