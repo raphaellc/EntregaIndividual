@@ -29,7 +29,6 @@ private:
 	No<T>* fim_lista;
 	No<T>* aux;
 	T* temp;
-	T temporaria;
 	
 protected:
 	int tam;
@@ -41,7 +40,6 @@ template <class T>
 inline Lista<T>::Lista()
 {
 	inicio_lista = fim_lista = aux = nullptr;
-	temp = new int;
 	tam = 0;
 }
 
@@ -91,7 +89,7 @@ inline void Lista<T>::insereInicioLista(T* elemento)
 template <class T>
 inline T* Lista<T>::removeUltimoNo()
 {
-	int* temp = fim_lista->getDado();
+	temp = fim_lista->getDado();
 	tam--;
 	percorrerLista(); //Encontrar o penúltimo nó da lista
 	delete fim_lista; //Desaloca a última posição
@@ -109,7 +107,7 @@ inline T* Lista<T>::removeUltimoNo()
 template <class T>
 inline T* Lista<T>::removePrimeiroNo()
 {
-	int* temp = inicio_lista->getDado();
+	temp = inicio_lista->getDado();
 	tam--;
 	aux = inicio_lista;//Seta o Aux na posição Inicial
 	aux = aux->getProximo();//Se desloca para a segunda posição
@@ -139,8 +137,8 @@ inline void Lista<T>::esvaziaLista()
 template <class T>
 inline T* Lista<T>::obterUltimoElemento()
 {
-	temporaria = fim_lista->getDado();
-	return &temporaria;
+	temp = fim_lista->getDado();
+	return temp;
 }
 
 template <class T>
