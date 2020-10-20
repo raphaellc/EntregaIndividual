@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Recursividade", "Recursividade.vcxproj", "{E6D80429-789D-4690-84F3-56F4ED196C45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6D80429-789D-4690-84F3-56F4ED196C45}.Debug|x64.ActiveCfg = Debug|x64
+		{E6D80429-789D-4690-84F3-56F4ED196C45}.Debug|x64.Build.0 = Debug|x64
+		{E6D80429-789D-4690-84F3-56F4ED196C45}.Debug|x86.ActiveCfg = Debug|Win32
+		{E6D80429-789D-4690-84F3-56F4ED196C45}.Debug|x86.Build.0 = Debug|Win32
+		{E6D80429-789D-4690-84F3-56F4ED196C45}.Release|x64.ActiveCfg = Release|x64
+		{E6D80429-789D-4690-84F3-56F4ED196C45}.Release|x64.Build.0 = Release|x64
+		{E6D80429-789D-4690-84F3-56F4ED196C45}.Release|x86.ActiveCfg = Release|Win32
+		{E6D80429-789D-4690-84F3-56F4ED196C45}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {842C78DE-8416-4ECD-991C-60E49C06C664}
+	EndGlobalSection
+EndGlobal
