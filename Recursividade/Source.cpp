@@ -81,10 +81,21 @@ int main() {
 	cout << "Saida: " << somaVetor(vetor, 3) << endl;
 	cout << "//////////////////////////////////////\n";
 	//Maior divisor comum entre m e n
-	cout << "SOMA DE ELEMENTOS NUM VETOR\n";
-	cout << "Entrada: 6, 10\n";
-	cout << "Saida: " << mdc(6, 10) << endl;
-	cout << "//////////////////////////////////////\n";
+	//cout << "SOMA DE ELEMENTOS NUM VETOR\n";
+	//cout << "Entrada: 6, 10\n";
+	//cout << "Saida: " << mdc(6, 10) << endl;
+	//cout << "//////////////////////////////////////\n";
+
+
+	string nome = "matheus";
+	
+	cout << nome << endl;
+
+	for (int i = 0; i < nome.size(); i++) {
+		nome[i] = toupper(nome[i]);
+	}
+
+	cout << nome << endl;
 
 	system("pause");
 	return 0;
